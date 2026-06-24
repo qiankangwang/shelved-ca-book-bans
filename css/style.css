@@ -373,14 +373,25 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); margin: 2.2rem 0 .8rem; }
 .narrative-ph::before { content: "\270E"; color: var(--accent); font-size: 1rem; line-height: 1.4; }
 
 /* ---- team / about -------------------------------------------------------- */
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.4rem; }
-.team-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem 1.5rem; box-shadow: var(--shadow); }
-.team-card .nm { font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: var(--ink); margin: 0 0 .2rem; }
-.team-card .major { font-family: var(--ui); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 .9rem; min-height: 1rem; }
-.team-card dl { margin: 0; font-size: .94rem; }
-.team-card dt { font-family: var(--ui); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-top: .75rem; }
-.team-card dd { margin: .15rem 0 0; color: var(--ink-soft); line-height: 1.5; }
-.team-card .tbd { color: var(--ink-faint); font-style: italic; }
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.4rem; margin-top: 2.4rem; }
+.team-card { flex: 1 1 290px; max-width: 360px; display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.6rem 1.6rem; box-shadow: var(--shadow); }
+.team-card__top { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.1rem; }
+.team-card .avatar {
+  flex: none; width: 3rem; height: 3rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ui); font-weight: 700; font-size: 1rem; letter-spacing: .02em;
+  color: #fff; background: var(--a, var(--accent));
+}
+.team-card .nm { font-family: var(--display); font-weight: 700; font-size: 1.2rem; color: var(--ink); margin: 0; line-height: 1.15; }
+.team-card .major { font-family: var(--ui); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin: .2rem 0 0; }
+.team-card .role { font-family: var(--ui); font-size: .82rem; line-height: 1.45; color: var(--ink-soft);
+  background: var(--paper-deep); border-radius: var(--radius); padding: .55rem .7rem; margin: 0 0 1rem; }
+.team-card dl { margin: 0; font-size: .92rem; }
+.team-card dt { font-family: var(--ui); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-top: .7rem; }
+.team-card dd { margin: .12rem 0 0; color: var(--ink-soft); line-height: 1.5; }
+.team-card .role.tbd { color: var(--ink-faint); font-style: italic; }
 
 /* ---- methods sub-blocks -------------------------------------------------- */
 .method-block { margin-top: 1.8rem; }
@@ -403,8 +414,8 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); margin: 2.2rem 0 .8rem; }
 .photo-ph .lbl { font-size: .85rem; font-weight: 600; color: var(--ink-soft); }
 .photo-ph .cap { font-size: .74rem; }
 
-@media (max-width: 900px) { .team-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 760px) { .team-grid, .photo-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .photo-grid { grid-template-columns: 1fr; } }
+@media (max-width: 540px) { .team-card { flex: 1 1 100%; max-width: 100%; } }
 
 /* =============================================================================
    ACCESSIBILITY & DIGITAL-HUMANITIES ASSURANCE LAYER
