@@ -42,6 +42,31 @@ Just open `index.html` in a browser (the map data is inlined, so it works from
 `file://`; the Chart.js and D3 libraries load from a CDN, so you need an internet
 connection).
 
+## Accessibility
+
+The site targets **WCAG 2.1 AA**. A floating ♿ control (bottom-right) offers:
+
+- **Read-aloud** (text-to-speech) for every section, via the Web Speech API
+- Adjustable **text size**, **dark mode**, and a **high-contrast** theme
+- **Readable spacing/font** and a **reduce-motion** option (also honours the OS setting)
+- **Always-underline links**
+- Full **keyboard operation** with visible focus, a skip link, and ARIA live status
+
+Every chart and the map also ships a **text data-table alternative** ("Show data
+table") and descriptive labels, so the findings are available without sight of the
+graphics. Preferences are saved in `localStorage` only — nothing leaves the browser.
+
+## Data, license & citation
+
+- **Download the data** from the *Data & Methods* section (CSV or JSON, generated live
+  from `js/data.js`), alongside a **data dictionary**.
+- **Code** is licensed **MIT**; **content** (prose & visuals) is **CC BY 4.0** — see
+  [`LICENSE`](LICENSE).
+- **Citation:** a machine-readable [`CITATION.cff`](CITATION.cff) is included; see the
+  *Accessibility · Citation · Reuse* section for a suggested citation.
+- **Privacy:** no cookies, no analytics, no trackers.
+- **Source data:** PEN America, *Index of School Book Bans* (https://pen.org/book-bans/).
+
 ## Credits
 
 - Charts: [Chart.js](https://www.chartjs.org/) · Map: [D3](https://d3js.org/)
