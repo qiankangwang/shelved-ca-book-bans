@@ -19,6 +19,7 @@
 <body>
   <a class="skip-link" href="#significance">Skip to content</a>
   <div id="progress" aria-hidden="true"></div>
+  <noscript><p class="noscript">These interactive visualizations need JavaScript. The full written analysis, sources, and data tables remain readable without it.</p></noscript>
 
   <!-- ===================== NAV ===================== -->
   <nav class="nav" aria-label="Primary">
@@ -31,6 +32,8 @@
       <a href="#analysis">Analysis</a>
       <a href="#conclusion">Conclusion</a>
       <a href="#bibliography">Sources</a>
+      <a href="#data-methods">Data</a>
+      <a href="#reuse">Reuse</a>
     </div>
   </nav>
 
@@ -324,6 +327,93 @@
         </div>
       </div>
     </section>
+
+    <!-- ===================== DATA & METHODS ===================== -->
+    <section class="section" id="data-methods">
+      <div class="wrap">
+        <div class="reading">
+          <p class="eyebrow"><span class="num">07</span> Data &amp; Methods</p>
+          <h2 class="section__title">Data &amp; methods</h2>
+          <p>Every figure on this page is generated from a single, openly published dataset (<code>js/data.js</code>). We document our source, scope, and limitations here so the analysis can be inspected, reused, and reproduced.</p>
+          <p><strong>Source.</strong> All challenge records derive from PEN America’s <em>Index of School Book Bans</em>, which catalogs reported challenges by title, author, district, state, and academic year.</p>
+          <p><strong>Scope.</strong> We include records coded as California public-school challenges affecting elementary (K–5) settings between 2021 and 2025. The unit of analysis is a single reported challenge — an attempt to remove or restrict access to a title.</p>
+          <p><strong>Limitations.</strong> The index records only <em>reported</em> challenges; quiet removals and self-censorship leave no trace (see <a href="#ethics">Ethical Considerations</a>). The figures currently display clearly-labelled illustrative placeholder values pending final data entry; replace them in <code>js/data.js</code> to publish real findings.</p>
+        </div>
+
+        <div class="reading">
+          <h3>Data dictionary</h3>
+          <table class="dict">
+            <thead><tr><th scope="col">Field</th><th scope="col">Description</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><code>dataset</code></th><td>Which visualization the row belongs to: <code>timeline</code>, <code>geography</code>, <code>themes</code>, <code>authors</code>, or <code>comparison</code>.</td></tr>
+              <tr><th scope="row"><code>category</code></th><td>The labelled category — a year, county name, theme, author-identity group, or comparison series.</td></tr>
+              <tr><th scope="row"><code>code</code></th><td>5-digit county FIPS code (geography rows only).</td></tr>
+              <tr><th scope="row"><code>year</code></th><td>Calendar year, 2021–2025 (timeline and comparison rows).</td></tr>
+              <tr><th scope="row"><code>value</code></th><td>The measured quantity for the row.</td></tr>
+              <tr><th scope="row"><code>unit</code></th><td><code>count</code> (number of challenges) or <code>percent</code> (share of challenged titles/authors).</td></tr>
+              <tr><th scope="row"><code>placeholder</code></th><td><code>true</code> while illustrative sample values are shown; set to <code>false</code> once real figures are entered.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="dl-row">
+            <button class="dl-btn" id="dl-csv" type="button">⬇ Download data (CSV)</button>
+            <button class="dl-btn alt" id="dl-json" type="button">⬇ Download data (JSON)</button>
+            <a class="dl-btn alt" href="https://github.com/qiankangwang/shelved-ca-book-bans/blob/main/js/data.js">View source dataset</a>
+          </div>
+          <p style="font-family:var(--ui);font-size:.82rem;color:var(--ink-faint);margin-top:.4rem">Downloads reflect the current values in <code>js/data.js</code>, including the <code>placeholder</code> flag.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACCESSIBILITY · CITATION · REUSE ============ -->
+    <section class="section section--tint" id="reuse">
+      <div class="wrap">
+        <div class="reading">
+          <p class="eyebrow"><span class="num">08</span> Accessibility · Citation · Reuse</p>
+          <h2 class="section__title">Use, cite &amp; reuse</h2>
+          <p>This project is built to be read by everyone and reused by anyone. Use the <span aria-hidden="true">♿</span> button at the bottom-right to adjust text size, contrast, and motion, or to have any section read aloud.</p>
+        </div>
+
+        <div class="assurance-grid">
+          <div class="assurance-card">
+            <h3>Accessibility</h3>
+            <p>We aim to meet <strong>WCAG 2.1 AA</strong>. Built-in supports:</p>
+            <ul>
+              <li>Read-aloud (text-to-speech) for every section</li>
+              <li>Adjustable text size, dark mode &amp; high-contrast theme</li>
+              <li>Readable spacing/font and a reduce-motion option</li>
+              <li>Full keyboard operation with visible focus</li>
+              <li>Every chart &amp; the map has a text data-table alternative and descriptive labels</li>
+            </ul>
+            <p>Found a barrier? Please <a href="https://github.com/qiankangwang/shelved-ca-book-bans/issues">open an issue</a> so we can fix it.</p>
+          </div>
+
+          <div class="assurance-card">
+            <h3>How to cite</h3>
+            <p>Suggested citation (replace the author field):</p>
+            <div class="cite-block">[Author/Team]. <em>Shelved: Book Bans in California Elementary Schools, 2021–2025.</em> 2026, https://qiankangwang.github.io/shelved-ca-book-bans/.</div>
+            <button class="copy-cite" type="button">Copy citation</button>
+            <p style="font-size:.85rem;margin-top:.7rem">A machine-readable <code>CITATION.cff</code> ships in the repository.</p>
+          </div>
+
+          <div class="assurance-card">
+            <h3>Licensing &amp; reuse</h3>
+            <p>You’re free to share and adapt this work with attribution.</p>
+            <div class="badge-row">
+              <span class="pill">Text &amp; visuals — CC BY 4.0</span>
+              <span class="pill">Code — MIT</span>
+            </div>
+            <p style="margin-top:.8rem">The underlying challenge records are derived from PEN America’s <em>Index of School Book Bans</em>; consult PEN America for terms governing the source data.</p>
+          </div>
+
+          <div class="assurance-card">
+            <h3>Privacy &amp; open source</h3>
+            <p>This site collects <strong>nothing</strong>: no cookies, no analytics, no trackers, no accounts. Your accessibility preferences are stored only in your own browser.</p>
+            <p>It is fully static and open source — no build step, no server. <a href="https://github.com/qiankangwang/shelved-ca-book-bans">Read or fork the source on GitHub.</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -339,9 +429,16 @@
         <p style="margin:0">Data: PEN America <em>Index of School Book Bans.</em></p>
         <span class="stamp" aria-hidden="true">CHALLENGED</span>
       </div>
+      <div class="footer__links">
+        <a href="https://github.com/qiankangwang/shelved-ca-book-bans">Source on GitHub</a>
+        <a href="#data-methods">Data &amp; methods</a>
+        <a href="#reuse">Accessibility</a>
+        <a href="#reuse">How to cite</a>
+        <a href="https://github.com/qiankangwang/shelved-ca-book-bans/blob/main/LICENSE">License</a>
+      </div>
       <div class="footer__fine">
-        <span>Built with Chart.js &amp; D3 · county geometry from the U.S. Census via us-atlas.</span>
-        <span>Visualization figures shown are illustrative placeholders pending data entry.</span>
+        <span>Content CC BY 4.0 · code MIT · built with Chart.js &amp; D3 · county geometry from the U.S. Census via us-atlas.</span>
+        <span>v1.0 · last updated June 2026 · No cookies, analytics, or trackers · figures are illustrative placeholders pending data entry.</span>
       </div>
     </div>
   </footer>
@@ -354,5 +451,6 @@
   <script src="js/charts.js"></script>
   <script src="js/map.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/a11y.js"></script>
 </body>
 </html>

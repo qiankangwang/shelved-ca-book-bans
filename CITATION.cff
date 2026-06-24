@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it as below."
+title: "Shelved: Book Bans in California Elementary Schools, 2021–2025"
+abstract: >-
+  A digital-humanities project mapping how book bans in California public
+  elementary schools evolved between 2021 and 2025 — their geographic
+  distribution, targeted themes, and affected authors — read through Critical
+  Race Theory, Feminist Theory, and Science & Technology Studies. Data source:
+  PEN America, Index of School Book Bans.
+type: dataset
+authors:
+  - name: "Project author (replace this entry in CITATION.cff)"
+date-released: "2026-06-24"
+version: "1.0.0"
+url: "https://qiankangwang.github.io/shelved-ca-book-bans/"
+repository-code: "https://github.com/qiankangwang/shelved-ca-book-bans"
+license: MIT
+keywords:
+  - digital humanities
+  - book bans
+  - censorship
+  - California
+  - elementary education
+  - data visualization
+  - PEN America

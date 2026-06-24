@@ -355,3 +355,151 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); margin: 2.2rem 0 .8rem; }
     border-radius: var(--radius); color: var(--ink); font-size: 1.2rem; cursor: pointer; }
   .figure__head { flex-direction: column; }
 }
+@media (max-width: 760px) { .assurance-grid { grid-template-columns: 1fr; } }
+
+/* =============================================================================
+   ACCESSIBILITY & DIGITAL-HUMANITIES ASSURANCE LAYER
+   ========================================================================== */
+
+/* ---- user preference modes (set on <html> by js/a11y.js) ----------------- */
+html[data-fontscale="lg"] { font-size: 112.5%; }
+html[data-fontscale="xl"] { font-size: 125%; }
+
+html[data-theme="dark"] {
+  --paper: #171310; --paper-deep: #1f1a15; --surface: #241d17;
+  --ink: #f2ebdd; --ink-soft: #cabfae; --ink-faint: #a99d8a;
+  --line: #3a322a; --line-strong: #4c4338;
+  --accent: #e6938c; --accent-deep: #f0b3ad; --accent-tint: #3a211e;
+  --redact: #0d0b09;
+}
+html[data-theme="dark"] body { background: var(--paper); color: var(--ink); }
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .ethics-list li,
+html[data-theme="dark"] .assurance-card { background: var(--surface); }
+html[data-theme="dark"] .footer { background: #0e0b09; }
+/* keep visualization figures on a light "plate" so hard-coded chart/map colors stay legible */
+html[data-theme="dark"] .figure {
+  --surface: #fbf8f1; --ink: #211a14; --ink-soft: #4a4036; --ink-faint: #6f6453;
+  --line: #e2d8c5; --line-strong: #d3c6ad; --paper: #f6f1e7; --paper-deep: #efe7d6;
+  --accent: #9e2b25; --accent-deep: #7c1f1a; --accent-tint: #f3e0dd;
+  background: var(--surface); color: var(--ink);
+}
+
+html[data-contrast="high"] {
+  --paper: #ffffff; --paper-deep: #f0f0f0; --surface: #ffffff;
+  --ink: #000000; --ink-soft: #1a1a1a; --ink-faint: #262626;
+  --line: #595959; --line-strong: #404040;
+  --accent: #8a0f0a; --accent-deep: #6d0c08; --accent-tint: #f7e3e1;
+}
+html[data-contrast="high"] a { text-decoration: underline; }
+html[data-contrast="high"] .nav,
+html[data-contrast="high"] .figure,
+html[data-contrast="high"] .card,
+html[data-contrast="high"] .assurance-card { border-color: var(--line-strong); }
+
+html[data-readable="true"] body { font-family: var(--ui); }
+html[data-readable="true"] .reading,
+html[data-readable="true"] .lede,
+html[data-readable="true"] p,
+html[data-readable="true"] li { letter-spacing: .02em; word-spacing: .14em; line-height: 1.95; }
+
+html[data-underline="true"] a { text-decoration: underline; text-underline-offset: .18em; }
+
+html[data-motion="off"] *,
+html[data-motion="off"] *::before,
+html[data-motion="off"] *::after { animation: none !important; transition: none !important; }
+html[data-motion="off"] { scroll-behavior: auto; }
+html[data-motion="off"] .reveal { opacity: 1 !important; transform: none !important; }
+
+/* ---- visually-hidden live region ---------------------------------------- */
+.a11y-live { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---- no-JS notice -------------------------------------------------------- */
+.noscript { background: var(--accent-tint); color: var(--accent-deep); text-align: center; padding: .7rem 1rem; font-family: var(--ui); font-size: .9rem; }
+
+/* ---- accessibility floating button + panel ------------------------------ */
+.a11y-fab {
+  position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 140;
+  width: 3.2rem; height: 3.2rem; border-radius: 50%;
+  background: var(--accent); color: #fff; border: 2px solid #fff;
+  box-shadow: var(--shadow-lg); cursor: pointer; font-size: 1.45rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.a11y-fab:hover { background: var(--accent-deep); }
+.a11y-panel {
+  position: fixed; right: 1.1rem; bottom: 5.3rem; z-index: 141;
+  width: min(22rem, calc(100vw - 2rem)); max-height: min(80vh, 42rem); overflow: auto;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: 10px;
+  box-shadow: var(--shadow-lg); padding: 1.2rem 1.3rem; font-family: var(--ui); display: none;
+}
+.a11y-panel.open { display: block; }
+.a11y-panel h2 { font-family: var(--ui); font-size: 1rem; margin: 0 0 .15rem; color: var(--ink); }
+.a11y-panel .sub { font-size: .78rem; color: var(--ink-faint); margin: 0 0 1.1rem; }
+.a11y-group { margin: 0 0 1.1rem; }
+.a11y-group > .lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); display: block; margin: 0 0 .55rem; }
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; overflow: hidden; }
+.seg button { border: 0; background: none; padding: .38rem .8rem; font-family: var(--ui); font-size: .85rem; cursor: pointer; color: var(--ink-soft); }
+.seg button + button { border-left: 1px solid var(--line-strong); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.tgl-row { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .45rem 0; }
+.tgl-row label { font-size: .92rem; color: var(--ink); }
+.tgl { position: relative; width: 2.6rem; height: 1.45rem; border-radius: 999px; background: var(--line-strong); border: 0; cursor: pointer; flex: none; transition: background .15s; }
+.tgl::after { content: ""; position: absolute; top: 2px; left: 2px; width: 1.05rem; height: 1.05rem; border-radius: 50%; background: #fff; transition: transform .15s; }
+.tgl[aria-pressed="true"] { background: var(--accent); }
+.tgl[aria-pressed="true"]::after { transform: translateX(1.15rem); }
+.a11y-actions { display: flex; gap: .5rem; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: .9rem; }
+.a11y-actions button { font-family: var(--ui); font-size: .82rem; padding: .45rem .7rem; border-radius: var(--radius); border: 1px solid var(--line-strong); background: none; color: var(--ink); cursor: pointer; }
+.a11y-actions button:hover { background: var(--paper-deep); }
+
+/* ---- per-section "Listen" (text-to-speech) button ----------------------- */
+.listen-btn {
+  display: inline-flex; align-items: center; gap: .45rem; vertical-align: middle;
+  font-family: var(--ui); font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent-deep); background: var(--accent-tint);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 999px; padding: .32rem .75rem; cursor: pointer; margin: 0 0 1.2rem;
+}
+.listen-btn:hover { background: color-mix(in srgb, var(--accent) 16%, transparent); }
+.listen-btn.is-playing { background: var(--accent); color: #fff; border-color: var(--accent); }
+.listen-btn[hidden] { display: none; }
+
+/* ---- accessible data table under each figure ---------------------------- */
+.fig-data { border-top: 1px dashed var(--line); }
+.fig-data > summary { cursor: pointer; font-family: var(--ui); font-size: .82rem; color: var(--accent-deep); padding: .85rem 1.5rem; list-style: none; }
+.fig-data > summary::-webkit-details-marker { display: none; }
+.fig-data > summary::before { content: "▸ "; }
+.fig-data[open] > summary::before { content: "▾ "; }
+.fig-data .tbl-wrap { padding: 0 1.5rem 1.4rem; overflow: auto; }
+table.datatable { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: .85rem; }
+.datatable caption { text-align: left; color: var(--ink-faint); font-size: .78rem; margin-bottom: .5rem; }
+.datatable th, .datatable td { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid var(--line); }
+.datatable th { color: var(--ink-soft); font-weight: 600; }
+.datatable td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ---- Data & Methods: dictionary + downloads ----------------------------- */
+.dict { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: .92rem; margin-top: 1.4rem; }
+.dict th, .dict td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.dict th { color: var(--ink-soft); white-space: nowrap; }
+.dict code { background: var(--paper-deep); padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+.dl-row { display: flex; gap: .7rem; flex-wrap: wrap; margin: 1.6rem 0 .5rem; }
+.dl-btn { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--ui); font-weight: 600; font-size: .9rem; padding: .6rem 1rem; border-radius: var(--radius); background: var(--accent); color: #fff; border: 0; cursor: pointer; text-decoration: none; }
+.dl-btn.alt { background: none; color: var(--accent-deep); border: 1px solid var(--line-strong); }
+.dl-btn:hover { background: var(--accent-deep); color: #fff; }
+
+/* ---- assurance cards (accessibility, citation, license, privacy) -------- */
+.assurance-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; margin-top: 2rem; }
+.assurance-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem 1.6rem; box-shadow: var(--shadow); }
+.assurance-card h3 { font-family: var(--ui); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 .8rem; }
+.assurance-card p { font-size: 1rem; color: var(--ink-soft); line-height: 1.6; margin: 0 0 .8rem; }
+.assurance-card ul { margin: .4rem 0 .8rem; padding-left: 1.1rem; color: var(--ink-soft); font-size: .98rem; line-height: 1.55; }
+.cite-block { background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; font-family: var(--ui); font-size: .86rem; line-height: 1.55; color: var(--ink); }
+.copy-cite { margin-top: .7rem; font-family: var(--ui); font-size: .8rem; padding: .42rem .75rem; border: 1px solid var(--line-strong); border-radius: var(--radius); background: none; color: var(--ink); cursor: pointer; }
+.copy-cite.copied { background: var(--teal); color: #fff; border-color: var(--teal); }
+.badge-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .6rem; }
+.pill { font-family: var(--ui); font-size: .72rem; font-weight: 600; padding: .25rem .6rem; border-radius: 999px; background: var(--paper-deep); color: var(--ink-soft); border: 1px solid var(--line); }
+
+/* ---- footer link row ----------------------------------------------------- */
+.footer__links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; font-family: var(--ui); font-size: .85rem; padding-top: 1.2rem; }
+.footer__links a { color: var(--gold); text-decoration: none; }
+.footer__links a:hover { text-decoration: underline; }
