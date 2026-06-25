@@ -59,15 +59,14 @@
   function themes() {
     var t = D.themes, el = document.getElementById("chart-themes");
     if (!el) return;
-    var colors = t.labels.map(function (_, i) {
-      if (t.mutedLast && i === t.labels.length - 1) return MUTED;
-      return PALETTE[i % PALETTE.length];
-    });
-    buildLegend("legend-themes", t.labels, colors);
-    var total = t.values.reduce(function (a, b) { return a + b; }, 0);
+    var labels = t.labels.slice(), values = t.values.slice();
+    if (t.chartExcludeOther) { labels = labels.slice(0, -1); values = values.slice(0, -1); }
+    var colors = labels.map(function (_, i) { return PALETTE[i % PALETTE.length]; });
+    buildLegend("legend-themes", labels, colors);
+    var total = values.reduce(function (a, b) { return a + b; }, 0);
     new Chart(el, {
       type: "doughnut",
-      data: { labels: t.labels, datasets: [{ data: t.values, backgroundColor: colors, borderColor: "#fbf8f1", borderWidth: 2, hoverOffset: 6 }] },
+      data: { labels: labels, datasets: [{ data: values, backgroundColor: colors, borderColor: "#fbf8f1", borderWidth: 2, hoverOffset: 6 }] },
       options: {
         responsive: true, maintainAspectRatio: false, cutout: "58%",
         plugins: {
