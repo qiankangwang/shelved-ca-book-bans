@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shelved — Book Bans in California Elementary Schools (2021–2025)</title>
-  <meta name="description" content="A digital humanities project mapping how book bans in California public elementary schools evolved between 2021 and 2025 — geography, themes, and affected authors — read through Critical Race Theory, Data Feminism, and Science & Technology Studies." />
+  <title>Shelved — Book Bans in U.S. Public Schools (2021–2023)</title>
+  <meta name="description" content="A digital humanities project mapping book bans in U.S. public schools, 2021–2023 — by state, theme, and author — read through Critical Race Theory, Data Feminism, and Science & Technology Studies. 15,960 records across 43 states." />
   <meta name="author" content="Rosie Lu, Chris Chen, Zoey Huang, Yewei Wang, Kant Wang" />
-  <meta property="og:title" content="Shelved — Book Bans in California Elementary Schools" />
-  <meta property="og:description" content="Mapping book challenges in California elementary schools, 2021–2025, through CRT, Data Feminism & STS." />
+  <meta property="og:title" content="Shelved — Book Bans in U.S. Public Schools" />
+  <meta property="og:description" content="Mapping ~16,000 book bans across U.S. public schools, 2021–2023, through CRT, Data Feminism & STS." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23f6f1e7'/%3E%3Crect x='7' y='6' width='18' height='20' rx='1.5' fill='%23fff' stroke='%23211a14' stroke-width='1.5'/%3E%3Cline x1='16' y1='6' x2='16' y2='26' stroke='%23211a14' stroke-width='1'/%3E%3Crect x='9.5' y='12' width='13' height='3.4' fill='%239e2b25'/%3E%3C/svg%3E" />
 
@@ -41,13 +41,13 @@
   <header class="hero" id="top">
     <div class="hero__redactions" aria-hidden="true"></div>
     <div class="hero__inner">
-      <p class="hero__kicker">A Digital Humanities Project · PEN America Index, 2021–2025</p>
+      <p class="hero__kicker">A Digital Humanities Project · PEN America Index, 2021–2023</p>
       <h1>Shelved<span class="red">.</span></h1>
-      <p class="hero__sub">How book bans reshaped the shelves of California’s public elementary schools — and what those silences reveal.</p>
+      <p class="hero__sub">How book bans swept U.S. public-school libraries between 2021 and 2023 — and what those silences reveal.</p>
       <div class="hero__meta">
-        <span>California K–5 libraries</span>
-        <span>2021 – 2025</span>
-        <span>Geography · Themes · Authors</span>
+        <span>U.S. public schools</span>
+        <span>2021 – 2023</span>
+        <span>States · Themes · Authors</span>
       </div>
       <div class="scrollcue"><span class="dot" aria-hidden="true"></span> Scroll to begin</div>
     </div>
@@ -59,9 +59,9 @@
       <div class="reading">
         <p class="eyebrow"><span class="num">01</span> Introduction</p>
         <h2 class="section__title">Research question</h2>
-        <p class="pullquote">How have book bans in California public elementary schools evolved between 2021 and 2025 in terms of geographic distribution, targeted themes, and affected authors — and what do these patterns reveal about the cultural and political forces shaping childhood reading in the state?</p>
+        <p class="pullquote">How did book bans in U.S. public schools evolve between 2021 and 2023 — across states, the themes most often targeted, and the authors most affected — and what do these patterns reveal about the cultural and political forces shaping who gets to read what?</p>
         <h3>Significance</h3>
-        <p>Since 2021, book challenges in U.S. public schools have reached historic highs. California has laws protecting diverse books — but challenges persist even here. Elementary school is where children first learn whose stories are worth telling. When books about certain communities are repeatedly removed, it sends a message about whose experiences belong in the classroom.</p>
+        <p>Between 2021 and 2023, book challenges in U.S. public schools reached historic highs — this dataset alone records nearly 16,000 bans across 43 states. Schools are where children first learn whose stories are worth telling. When books about certain communities are repeatedly removed, it sends a message about whose experiences belong in the classroom.</p>
       </div>
     </section>
 
@@ -86,7 +86,7 @@
           <article class="card reveal">
             <p class="card__tag">Lens III</p>
             <h3>Science &amp; Technology Studies</h3>
-            <p>Our data is never complete. The PEN America dataset only captures reported challenges — books quietly removed leave no trace. Our visualizations show patterns, but the true scope of censorship in California is likely larger than what we can document.</p>
+            <p>Our data is never complete. Even nearly 16,000 records capture only reported bans — books quietly removed leave no trace. Our visualizations show patterns, but the true scope of censorship is larger than what we can document.</p>
           </article>
         </div>
       </div>
@@ -98,7 +98,7 @@
         <div class="reading">
           <p class="eyebrow"><span class="num">03</span> Methods</p>
           <h2 class="section__title">Data &amp; methods</h2>
-          <p>Every figure on this page is generated from a single, openly published dataset (<code>js/data.js</code>). We document our source, cleaning steps, tools, and limitations here so the analysis can be inspected, reused, and reproduced.</p>
+          <p>Every figure on this page is generated from a single, openly published dataset, cleaned from the PEN America Index. We document our source, cleaning, tools, and limitations here so the analysis can be inspected, reused, and reproduced.</p>
 
           <div class="method-block">
             <h3>Data sources</h3>
@@ -110,15 +110,15 @@
           <div class="method-block">
             <h3>Data cleaning decisions &amp; steps</h3>
             <ul class="method-list">
-              <li><b>Scope filter</b> <span>California public-school challenges affecting elementary (K–5) settings, 2021–2025. The unit of analysis is a single reported challenge.</span></li>
-              <li><b>Steps</b> <span><span class="tag-pending">To document</span> Detailed cleaning decisions (de-duplication, coding of themes &amp; author identity, geocoding to county) will be recorded here.</span></li>
+              <li><b>Scope</b> <span>U.S. public-school book bans, 2021–2023 — <b>15,960 records across 43 states.</b> The unit of analysis is a single reported ban.</span></li>
+              <li><b>Theme coding</b> <span>Each title was assigned a theme by an AI classifier, with a confidence level and a short reason. <span class="tag-pending">Note</span> “Other / Unclear” is the classifier’s residual bucket.</span></li>
             </ul>
           </div>
 
           <div class="method-block">
             <h3>Tools &amp; technologies</h3>
             <ul class="method-list">
-              <li><b>Data cleaning</b> <span><span class="tag-pending">To document</span> e.g. spreadsheet / Python (pandas)</span></li>
+              <li><b>Data cleaning</b> <span>Python / spreadsheet, plus an LLM theme classifier</span></li>
               <li><b>Website</b> <span>HTML, CSS, JavaScript · Chart.js · D3.js · deployed on GitHub Pages</span></li>
             </ul>
           </div>
@@ -126,135 +126,133 @@
 
         <div class="reading">
           <h3>Data dictionary</h3>
+          <p style="font-family:var(--ui);font-size:.88rem;color:var(--ink-soft);margin:.2rem 0 0">Fields in the source dataset. The charts use aggregated counts derived from these columns.</p>
           <table class="dict">
             <thead><tr><th scope="col">Field</th><th scope="col">Description</th></tr></thead>
             <tbody>
-              <tr><th scope="row"><code>dataset</code></th><td>Which visualization the row belongs to: <code>timeline</code>, <code>geography</code>, <code>themes</code>, <code>authors</code>, or <code>comparison</code>.</td></tr>
-              <tr><th scope="row"><code>category</code></th><td>The labelled category — a year, county name, theme, author-identity group, or comparison series.</td></tr>
-              <tr><th scope="row"><code>code</code></th><td>5-digit county FIPS code (geography rows only).</td></tr>
-              <tr><th scope="row"><code>year</code></th><td>Calendar year, 2021–2025 (timeline and comparison rows).</td></tr>
-              <tr><th scope="row"><code>value</code></th><td>The measured quantity for the row.</td></tr>
-              <tr><th scope="row"><code>unit</code></th><td><code>count</code> (number of challenges) or <code>percent</code> (share of challenged titles/authors).</td></tr>
-              <tr><th scope="row"><code>placeholder</code></th><td><code>true</code> while illustrative sample values are shown; set to <code>false</code> once real figures are entered.</td></tr>
+              <tr><th scope="row"><code>Author</code></th><td>Author of the banned title (“Last, First”).</td></tr>
+              <tr><th scope="row"><code>Title</code></th><td>Book title.</td></tr>
+              <tr><th scope="row"><code>State</code></th><td>U.S. state where the ban was recorded.</td></tr>
+              <tr><th scope="row"><code>District</code></th><td>School district.</td></tr>
+              <tr><th scope="row"><code>Ban Status</code></th><td>e.g. “Banned”, “Banned pending investigation”.</td></tr>
+              <tr><th scope="row"><code>Year</code></th><td>Calendar year, 2021–2023.</td></tr>
+              <tr><th scope="row"><code>AI_Theme</code></th><td>Theme assigned by the classifier.</td></tr>
+              <tr><th scope="row"><code>AI_Theme_Confidence</code></th><td>Classifier confidence (e.g. high / medium / low).</td></tr>
+              <tr><th scope="row"><code>AI_Theme_Reason</code></th><td>Short rationale for the assigned theme.</td></tr>
             </tbody>
           </table>
 
           <div class="dl-row">
-            <button class="dl-btn" id="dl-csv" type="button">⬇ Download data (CSV)</button>
-            <button class="dl-btn alt" id="dl-json" type="button">⬇ Download data (JSON)</button>
+            <button class="dl-btn" id="dl-csv" type="button">⬇ Download chart data (CSV)</button>
+            <button class="dl-btn alt" id="dl-json" type="button">⬇ Download chart data (JSON)</button>
             <a class="dl-btn alt" href="https://github.com/qiankangwang/shelved-ca-book-bans/blob/main/js/data.js">View source dataset</a>
           </div>
-          <p style="font-family:var(--ui);font-size:.82rem;color:var(--ink-faint);margin-top:.4rem">Downloads reflect the current values in <code>js/data.js</code>, including the <code>placeholder</code> flag.</p>
+          <p style="font-family:var(--ui);font-size:.82rem;color:var(--ink-faint);margin-top:.4rem">Downloads provide the aggregated counts behind each chart, generated live from <code>js/data.js</code>.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===================== 05 ANALYSIS ===================== -->
+    <!-- ===================== 04 ANALYSIS ===================== -->
     <section class="section section--tint" id="analysis">
       <div class="wrap">
         <div class="reading">
           <p class="eyebrow"><span class="num">04</span> Analysis</p>
           <h2 class="section__title">What the data shows</h2>
-          <p>Four core visualizations, plus a geographic view supporting our research question. The figures below display clearly-labelled illustrative placeholder values pending final data entry.</p>
+          <p>Four core visualizations plus a national map, drawn from 15,960 ban records across 43 states, 2021–2023.</p>
         </div>
 
         <!-- Visualization 1: Themes -->
         <div class="viz-head reveal"><span class="viz-kicker">Visualization 1</span><h3>Most frequently banned themes</h3></div>
-        <figure class="figure is-placeholder reveal">
+        <figure class="figure reveal">
           <div class="figure__head">
             <div>
-              <p class="figure__title">Challenged titles by theme</p>
-              <p class="figure__sub">Share of challenges, 2021–2025</p>
+              <p class="figure__title">Banned titles by theme</p>
+              <p class="figure__sub">All U.S. records, 2021–2023</p>
             </div>
-            <span class="badge-ph" title="Shares are scaffolding, not real PEN America figures.">Illustrative placeholder</span>
           </div>
           <div class="figure__body">
-            <div class="chart-box" style="height:320px"><canvas id="chart-themes"></canvas></div>
+            <div class="chart-box" style="height:340px"><canvas id="chart-themes"></canvas></div>
             <div class="legend" id="legend-themes"></div>
           </div>
-          <p class="figure__cap"><b>Figure 1.</b> Themes among challenged titles; a single title may span several. <b>Replace values in <code>js/data.js → themes</code>.</b></p>
+          <p class="figure__cap"><b>Figure 1.</b> Bans by AI-assigned theme. Sexuality / sex-education, violence, race, and LGBTQ+ themes lead; the classifier’s residual “Other / Unclear” bucket is the single largest — a limitation we flag in <a href="#ethics">Ethics</a>.</p>
         </figure>
         <p class="narrative-ph"><span>Narrative — to be written by the team.</span></p>
 
         <!-- Visualization 2: Over Time -->
         <div class="viz-head reveal"><span class="viz-kicker">Visualization 2</span><h3>Book bans over time</h3></div>
-        <figure class="figure is-placeholder reveal">
+        <figure class="figure reveal">
           <div class="figure__head">
             <div>
-              <p class="figure__title">Reported book challenges per year</p>
-              <p class="figure__sub">California elementary schools, 2021–2025</p>
+              <p class="figure__title">Reported book bans per year</p>
+              <p class="figure__sub">U.S. public schools, 2021–2023</p>
             </div>
-            <span class="badge-ph" title="These numbers are scaffolding, not real PEN America figures.">Illustrative placeholder</span>
           </div>
           <div class="figure__body">
             <div class="chart-box" style="height:340px"><canvas id="chart-timeline"></canvas></div>
           </div>
-          <p class="figure__cap"><b>Figure 2.</b> Timeline of reported challenges, with AB 1078 (2023) marked. <b>Replace values in <code>js/data.js → timeline</code>.</b></p>
+          <p class="figure__cap"><b>Figure 2.</b> Reported bans rose sharply — from 2,532 in 2021 to 10,066 in 2023.</p>
         </figure>
         <p class="narrative-ph"><span>Narrative — to be written by the team.</span></p>
 
         <!-- Visualization 3: Authors -->
-        <div class="viz-head reveal"><span class="viz-kicker">Visualization 3</span><h3>Banned authors by identity</h3></div>
-        <figure class="figure is-placeholder reveal">
+        <div class="viz-head reveal"><span class="viz-kicker">Visualization 3</span><h3>Most-challenged authors</h3></div>
+        <figure class="figure reveal">
           <div class="figure__head">
             <div>
-              <p class="figure__title">Challenged authors by identity</p>
-              <p class="figure__sub">Share of challenged authors, 2021–2025</p>
+              <p class="figure__title">Most-challenged authors</p>
+              <p class="figure__sub">By total bans, 2021–2023</p>
             </div>
-            <span class="badge-ph" title="Shares are scaffolding, not real PEN America figures.">Illustrative placeholder</span>
           </div>
           <div class="figure__body">
-            <div class="chart-box" style="height:300px"><canvas id="chart-authors"></canvas></div>
+            <div class="chart-box" style="height:360px"><canvas id="chart-authors"></canvas></div>
           </div>
-          <p class="figure__cap"><b>Figure 3.</b> Challenged authors by race/ethnicity and LGBTQ+ identity. <b>Replace values in <code>js/data.js → authors</code>.</b></p>
+          <p class="figure__cap"><b>Figure 3.</b> The ten authors with the most recorded bans, led by Ellen Hopkins (791) and Sarah J. Maas (657).</p>
         </figure>
         <p class="narrative-ph"><span>Narrative — to be written by the team.</span></p>
 
-        <!-- Visualization 4: State vs National -->
-        <div class="viz-head reveal"><span class="viz-kicker">Visualization 4</span><h3>Selected state vs. national average</h3></div>
-        <figure class="figure is-placeholder reveal">
+        <!-- Visualization 4: States vs National -->
+        <div class="viz-head reveal"><span class="viz-kicker">Visualization 4</span><h3>Top states vs. the national average</h3></div>
+        <figure class="figure reveal">
           <div class="figure__head">
             <div>
-              <p class="figure__title">California vs. the national average</p>
-              <p class="figure__sub">Challenges per year, 2021–2025</p>
+              <p class="figure__title">Top states vs. the national average</p>
+              <p class="figure__sub">Total bans, 2021–2023</p>
             </div>
-            <span class="badge-ph" title="These numbers are scaffolding, not real PEN America figures.">Illustrative placeholder</span>
           </div>
           <div class="figure__body">
             <div class="chart-box" style="height:340px"><canvas id="chart-comparison"></canvas></div>
             <div class="legend" id="legend-comparison"></div>
           </div>
-          <p class="figure__cap"><b>Figure 4.</b> California challenge numbers against the national average. <b>Replace values in <code>js/data.js → comparison</code>.</b></p>
+          <p class="figure__cap"><b>Figure 4.</b> The leading states tower over the national average of 371 bans per reporting state.</p>
         </figure>
         <p class="narrative-ph"><span>Narrative — to be written by the team.</span></p>
 
-        <!-- Geographic distribution (supports the research question) -->
-        <div class="viz-head reveal"><span class="viz-kicker">Geographic distribution</span><h3>Where challenges were reported</h3></div>
-        <figure class="figure is-placeholder reveal">
+        <!-- Geographic distribution -->
+        <div class="viz-head reveal"><span class="viz-kicker">Geographic distribution</span><h3>Where bans were reported</h3></div>
+        <figure class="figure reveal">
           <div class="figure__head">
             <div>
-              <p class="figure__title">Reported incidents by county</p>
-              <p class="figure__sub">California counties, sized by number of incidents, 2021–2025</p>
+              <p class="figure__title">Reported bans by state</p>
+              <p class="figure__sub">U.S. states, shaded by number of reported bans, 2021–2023</p>
             </div>
-            <span class="badge-ph" title="County values are scaffolding, not real PEN America figures.">Illustrative placeholder</span>
           </div>
           <div class="figure__body">
             <div class="map-grid">
-              <div class="map-box" id="ca-map" aria-label="Map of California counties"></div>
+              <div class="map-box" id="ca-map" aria-label="Map of U.S. states"></div>
               <div class="map-scale">
-                <h4>Reported incidents</h4>
+                <h4>Reported bans</h4>
                 <div class="scale-ramp">
                   <span>0</span>
                   <span class="grad" aria-hidden="true"></span>
                   <span id="map-max">—</span>
                 </div>
-                <p style="margin:.2rem 0 1rem;color:var(--ink-faint)">Darker counties recorded more reported challenges. <em>*placeholder maximum.</em></p>
-                <h4>Most-affected counties</h4>
+                <p style="margin:.2rem 0 1rem;color:var(--ink-faint)">Darker states recorded more reported bans. (Shading uses a square-root scale so smaller states stay visible.)</p>
+                <h4>Most-affected states</h4>
                 <ul class="map-top" id="map-top"></ul>
               </div>
             </div>
           </div>
-          <p class="figure__cap"><b>Figure 5.</b> Counties shaded by reported incident count. <b>Replace per-county values in <code>js/data.js → geography.incidents</code> (keyed by FIPS).</b></p>
+          <p class="figure__cap"><b>Figure 5.</b> States shaded by reported ban count; Florida, Iowa, and Texas dominate the record.</p>
         </figure>
         <p class="narrative-ph"><span>Narrative — to be written by the team.</span></p>
 
@@ -268,20 +266,20 @@
       </div>
     </section>
 
-    <!-- ===================== 06 ETHICAL CONSIDERATIONS ===================== -->
+    <!-- ===================== 05 ETHICAL CONSIDERATIONS ===================== -->
     <section class="section" id="ethics">
       <div class="reading">
         <p class="eyebrow"><span class="num">05</span> Ethical Considerations</p>
         <h2 class="section__title">What we can — and cannot — claim</h2>
         <ul class="ethics-list">
           <li><strong>Data ethics.</strong> This project is not neutral. We apply CRT, Data Feminism, and STS because we understand book bans as connected to broader systems of racial and gender inequality. Other frameworks would produce different interpretations of the same data.</li>
-          <li><strong>Limitations.</strong> Our data only captures reported incidents. Many removals happen quietly, without formal complaint. The PEN America index shows the visible surface of book censorship — the full picture is likely larger.</li>
+          <li><strong>Limitations.</strong> Our data only captures reported bans. Many removals happen quietly, without formal complaint. Our themes are also AI-assigned — the large “Other / Unclear” bucket is a reminder that automated classification is imperfect and that some titles resist easy labelling.</li>
           <li><strong>Stakeholder impact.</strong> The students most affected — particularly students of color and LGBTQ+ students — have no direct voice in this data. Their experiences appear only through the absence of books that might have represented them.</li>
         </ul>
       </div>
     </section>
 
-    <!-- ===================== 07 ANNOTATED BIBLIOGRAPHY ===================== -->
+    <!-- ===================== 06 ANNOTATED BIBLIOGRAPHY ===================== -->
     <section class="section section--tint" id="bibliography">
       <div class="wrap">
         <div class="reading">
@@ -318,7 +316,7 @@
                 <span class="cite__ref">Delgado, Richard, and Jean Stefáncic. <em>Critical Race Theory: An Introduction.</em> 3rd ed., New York UP, 2017.</span>
                 <span class="chev" aria-hidden="true">▸</span>
               </button>
-              <div class="cite__note"><div><p>This foundational text introduces Critical Race Theory, arguing that racism is embedded in systems and structures that produce racially unequal outcomes even when they appear neutral. The authors trace the development of CRT from legal scholarship into broader applications across education and social policy. It provides our primary theoretical lens for interpreting patterns in our dataset.</p><p>CRT directly shaped how we interpret the disproportionate targeting of books by and about people of color in California elementary schools. It helped us move beyond describing individual incidents and toward identifying the systemic patterns they reflect. This framework is visible throughout our Theoretical Framework and Analysis Narrative sections. It also informed our research question, pushing us to ask not just what is happening, but what these patterns reveal about cultural and political forces.</p></div></div>
+              <div class="cite__note"><div><p>This foundational text introduces Critical Race Theory, arguing that racism is embedded in systems and structures that produce racially unequal outcomes even when they appear neutral. The authors trace the development of CRT from legal scholarship into broader applications across education and social policy. It provides our primary theoretical lens for interpreting patterns in our dataset.</p><p>CRT directly shaped how we interpret the disproportionate targeting of books by and about people of color in U.S. public schools. It helped us move beyond describing individual incidents and toward identifying the systemic patterns they reflect. This framework is visible throughout our Theoretical Framework and Analysis sections. It also informed our research question, pushing us to ask not just what is happening, but what these patterns reveal about cultural and political forces.</p></div></div>
             </div>
             <div class="cite">
               <button class="cite__bar" aria-expanded="false">
@@ -334,10 +332,10 @@
             <h3>Sources for data</h3>
             <div class="cite">
               <button class="cite__bar" aria-expanded="false">
-                <span class="cite__ref">PEN America. <em>Index of School Book Bans.</em> PEN America, 2021–2025, pen.org/book-bans/.</span>
+                <span class="cite__ref">PEN America. <em>Index of School Book Bans.</em> PEN America, 2021–2023, pen.org/book-bans/.</span>
                 <span class="chev" aria-hidden="true">▸</span>
               </button>
-              <div class="cite__note"><div><p>PEN America is a nonprofit organization that advocates for freedom of expression. Since 2021, it has maintained a publicly accessible index documenting book bans and challenges in public schools across the United States, organized by title, author, school district, state, and academic year. It is the primary dataset for our entire project.</p><p>We use this dataset to filter and examine book challenge incidents specifically in California elementary schools between 2021 and 2025. It provides the foundation for all four of our visualizations, tracking patterns in geographic distribution, targeted themes, and affected authors. Because PEN America only records reported incidents, this dataset also directly shaped our Ethical Considerations section — particularly our discussion of data limitations and archival silence. Every analytical claim in our project traces back to this source.</p></div></div>
+              <div class="cite__note"><div><p>PEN America is a nonprofit organization that advocates for freedom of expression. Since 2021, it has maintained a publicly accessible index documenting book bans and challenges in public schools across the United States, organized by title, author, school district, state, and academic year. It is the primary dataset for our entire project.</p><p>We use this dataset to examine book bans in U.S. public schools between 2021 and 2023. After cleaning the index and assigning each title a theme via an AI classifier, it provides the foundation for all of our visualizations — tracking patterns in geographic distribution, targeted themes, and affected authors. Because PEN America only records reported incidents, this dataset also directly shaped our Ethical Considerations section — particularly our discussion of data limitations and archival silence. Every analytical claim in our project traces back to this source.</p></div></div>
             </div>
             <div class="cite">
               <button class="cite__bar" aria-expanded="false">
@@ -414,7 +412,7 @@
             <dl>
               <dt>Interests</dt><dd>AI for biology</dd>
               <dt>Experience</dt><dd>Research in AI for biology at Stanford and a computational biophysics lab; ML &amp; scientific computing.</dd>
-              <dt>Contributions</dt><dd>Designed and built the website — the interactive Chart.js charts, the D3.js map of California, and the accessibility layer. Also handled data cleaning, analysis, and deployment.</dd>
+              <dt>Contributions</dt><dd>Designed and built the website — the interactive Chart.js charts, the D3.js U.S. states map, and the accessibility layer. Also handled data cleaning, analysis, and deployment.</dd>
             </dl>
           </article>
 
@@ -448,7 +446,7 @@
           <div class="assurance-card">
             <h3>How to cite</h3>
             <p>Suggested citation:</p>
-            <div class="cite-block">Lu, Rosie, Chris Chen, Zoey Huang, Yewei Wang, and Kant Wang. <em>Shelved: Book Bans in California Elementary Schools, 2021–2025.</em> 2026, https://qiankangwang.github.io/shelved-ca-book-bans/.</div>
+            <div class="cite-block">Lu, Rosie, Chris Chen, Zoey Huang, Yewei Wang, and Kant Wang. <em>Shelved: Book Bans in U.S. Public Schools, 2021–2023.</em> 2026, https://qiankangwang.github.io/shelved-ca-book-bans/.</div>
             <button class="copy-cite" type="button">Copy citation</button>
             <p style="font-size:.85rem;margin-top:.7rem">A machine-readable <code>CITATION.cff</code> ships in the repository.</p>
           </div>
@@ -460,7 +458,7 @@
               <span class="pill">Text &amp; visuals — CC BY 4.0</span>
               <span class="pill">Code — MIT</span>
             </div>
-            <p style="margin-top:.8rem">The underlying challenge records are derived from PEN America’s <em>Index of School Book Bans</em>; consult PEN America for terms governing the source data.</p>
+            <p style="margin-top:.8rem">The underlying ban records are derived from PEN America’s <em>Index of School Book Bans</em>; consult PEN America for terms governing the source data.</p>
           </div>
 
           <div class="assurance-card">
@@ -482,7 +480,7 @@
       </div>
       <div class="footer__card">
         <h3>About this project</h3>
-        <p style="margin:0 0 .6rem">A digital humanities analysis of book challenges in California public elementary schools, 2021–2025, read through Critical Race Theory, Data Feminism, and Science &amp; Technology Studies.</p>
+        <p style="margin:0 0 .6rem">A digital humanities analysis of book bans in U.S. public schools, 2021–2023, read through Critical Race Theory, Data Feminism, and Science &amp; Technology Studies.</p>
         <p style="margin:0">Data: PEN America <em>Index of School Book Bans.</em></p>
         <span class="stamp" aria-hidden="true">CHALLENGED</span>
       </div>
@@ -494,15 +492,15 @@
         <a href="https://github.com/qiankangwang/shelved-ca-book-bans/blob/main/LICENSE">License</a>
       </div>
       <div class="footer__fine">
-        <span>Content CC BY 4.0 · code MIT · built with Chart.js &amp; D3 · county geometry from the U.S. Census via us-atlas.</span>
-        <span>v1.1 · last updated June 2026 · No cookies, analytics, or trackers · figures are illustrative placeholders pending data entry.</span>
+        <span>Content CC BY 4.0 · code MIT · built with Chart.js &amp; D3 · state geometry from the U.S. Census via us-atlas.</span>
+        <span>v2.0 · last updated June 2026 · No cookies, analytics, or trackers · figures aggregated from 15,960 ban records.</span>
       </div>
     </div>
   </footer>
 
   <!-- ===================== SCRIPTS ===================== -->
   <script src="js/data.js"></script>
-  <script src="js/ca-geo.js"></script>
+  <script src="js/us-geo.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="js/charts.js"></script>

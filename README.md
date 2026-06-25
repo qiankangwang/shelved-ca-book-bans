@@ -1,15 +1,16 @@
-# Shelved — Book Bans in California Elementary Schools (2021–2025)
+# Shelved — Book Bans in U.S. Public Schools (2021–2023)
 
-A static, no-build digital-humanities project examining how book bans in California
-public elementary schools evolved between 2021 and 2025 — their geographic
-distribution, targeted themes, and affected authors — read through **Critical Race
-Theory**, **Data Feminism**, and **Science & Technology Studies**.
+A static, no-build digital-humanities project examining book bans in U.S. public
+schools between 2021 and 2023 — their distribution by state, the themes most often
+targeted, and the authors most affected — read through **Critical Race Theory**,
+**Data Feminism**, and **Science & Technology Studies**.
 
-**Data source:** PEN America, *Index of School Book Bans*, 2021–2025.
+**Data:** cleaned from PEN America's *Index of School Book Bans* — **15,960 ban
+records across 43 states, 2021–2023**, with an AI-assigned theme per title.
 
 ## Live site
 
-Once GitHub Pages is enabled: **https://qiankangwang.github.io/shelved-ca-book-bans/**
+**https://qiankangwang.github.io/shelved-ca-book-bans/**
 
 ## What's here
 
@@ -17,28 +18,24 @@ A single scrollytelling page (`index.html`) with five interactive visualizations
 
 | # | Figure | Built with | Data in `js/data.js` |
 |---|--------|-----------|----------------------|
-| 1 | Challenges per year (timeline) | Chart.js | `timeline` |
-| 2 | California county map | D3 (choropleth) | `geography.incidents` |
-| 3 | Themes under attack | Chart.js (doughnut) | `themes` |
-| 4 | Affected authors | Chart.js (bar) | `authors` |
-| 5 | California vs. national average | Chart.js (bar) | `comparison` |
+| 1 | Most banned themes | Chart.js (doughnut) | `themes` |
+| 2 | Book bans over time (2021–2023) | Chart.js (line) | `timeline` |
+| 3 | Most-challenged authors | Chart.js (bar) | `authors` |
+| 4 | Top states vs. national average | Chart.js (bar) | `comparison` |
+| 5 | U.S. states map | D3 (choropleth) | `geography.byState` |
 
-## Filling in the data
+All figures show **real aggregated counts** computed from the cleaned dataset.
 
-Every visualization currently ships with **sample placeholder values** and an
-"Illustrative placeholder" badge, and the prose keeps literal `[X]` markers — this is
-intentional scaffolding. To publish real findings:
+## Updating the data
 
-1. Open **`js/data.js`** and replace the `values` (and per-county `incidents`, keyed by
-   5-digit county FIPS code) with your figures from the PEN America index.
-2. Set each dataset's `placeholder` flag to `false`.
-3. Replace the `[X]` / `[X%]` markers in `index.html` with the same numbers.
-
-No build step, bundler, or server is required — it's plain HTML/CSS/JS.
+The aggregated figures live in **`js/data.js`** (the single source of truth). To
+refresh them, re-aggregate the source CSV and replace the values — e.g. `themes`
+(counts per theme), `geography.byState` (counts keyed by full state name), or
+`authors` (top authors by count). No build step, bundler, or server is required.
 
 ## Local preview
 
-Just open `index.html` in a browser (the map data is inlined, so it works from
+Just open `index.html` in a browser (the map geometry is inlined, so it works from
 `file://`; the Chart.js and D3 libraries load from a CDN, so you need an internet
 connection).
 
@@ -58,8 +55,8 @@ graphics. Preferences are saved in `localStorage` only — nothing leaves the br
 
 ## Data, license & citation
 
-- **Download the data** from the *Data & Methods* section (CSV or JSON, generated live
-  from `js/data.js`), alongside a **data dictionary**.
+- **Download the data** from the *Methods* section (CSV or JSON of the aggregated
+  chart counts, generated live from `js/data.js`), alongside a **data dictionary**.
 - **Code** is licensed **MIT**; **content** (prose & visuals) is **CC BY 4.0** — see
   [`LICENSE`](LICENSE).
 - **Citation:** a machine-readable [`CITATION.cff`](CITATION.cff) is included; see the
@@ -70,5 +67,5 @@ graphics. Preferences are saved in `localStorage` only — nothing leaves the br
 ## Credits
 
 - Charts: [Chart.js](https://www.chartjs.org/) · Map: [D3](https://d3js.org/)
-- County geometry: U.S. Census Bureau via [us-atlas](https://github.com/topojson/us-atlas)
+- State geometry: U.S. Census Bureau via [us-atlas](https://github.com/topojson/us-atlas)
 - Fonts: Fraunces, Newsreader, Inter (Google Fonts)

@@ -189,45 +189,36 @@
 
   function buildTables() {
     var D = window.SHELVED_DATA; if (!D) return;
-    var ph = function (p) { return p ? " (illustrative placeholder values)" : ""; };
 
     // 1 timeline
-    if (D.timeline) attachTable(figureOf("chart-timeline"),
-      D.timeline.title + ph(D.timeline.placeholder),
-      tableEl(D.timeline.title, [{ label: "Year" }, { label: "Reported challenges", num: true }],
+    if (D.timeline) attachTable(figureOf("chart-timeline"), D.timeline.title,
+      tableEl(D.timeline.title, [{ label: "Year" }, { label: "Reported bans", num: true }],
         D.timeline.labels.map(function (y, i) { return [y, fmt(D.timeline.values[i])]; })));
 
-    // 2 geography
-    if (D.geography) {
-      var names = countyNames(), inc = D.geography.incidents || {};
-      var rows = Object.keys(inc).map(function (fips) { return [names[fips] || fips, fips, inc[fips]]; })
-        .sort(function (a, b) { return b[2] - a[2]; });
+    // 2 geography (by state)
+    if (D.geography && D.geography.byState) {
+      var bs = D.geography.byState;
+      var rows = Object.keys(bs).map(function (s) { return [s, bs[s]]; })
+        .sort(function (a, b) { return b[1] - a[1]; })
+        .map(function (r) { return [r[0], fmt(r[1])]; });
       attachTable(document.getElementById("ca-map") ? document.getElementById("ca-map").closest(".figure") : null,
-        D.geography.title + ph(D.geography.placeholder),
-        tableEl(D.geography.title + " — counties with reported incidents",
-          [{ label: "County" }, { label: "FIPS" }, { label: "Incidents", num: true }], rows));
+        D.geography.title,
+        tableEl(D.geography.title, [{ label: "State" }, { label: "Bans", num: true }], rows));
     }
     // 3 themes
-    if (D.themes) attachTable(figureOf("chart-themes"),
-      D.themes.title + ph(D.themes.placeholder),
-      tableEl(D.themes.title, [{ label: "Theme" }, { label: "Share", num: true }],
-        D.themes.labels.map(function (l, i) { return [l, fmt(D.themes.values[i]) + "%"]; })));
+    if (D.themes) attachTable(figureOf("chart-themes"), D.themes.title,
+      tableEl(D.themes.title, [{ label: "Theme" }, { label: "Bans", num: true }],
+        D.themes.labels.map(function (l, i) { return [l, fmt(D.themes.values[i])]; })));
     // 4 authors
-    if (D.authors) attachTable(figureOf("chart-authors"),
-      D.authors.title + ph(D.authors.placeholder),
-      tableEl(D.authors.title, [{ label: "Author identity" }, { label: "Share", num: true }],
-        D.authors.labels.map(function (l, i) { return [l, fmt(D.authors.values[i]) + "%"]; })));
+    if (D.authors) attachTable(figureOf("chart-authors"), D.authors.title,
+      tableEl(D.authors.title, [{ label: "Author" }, { label: "Bans", num: true }],
+        D.authors.labels.map(function (l, i) { return [l, fmt(D.authors.values[i])]; })));
     // 5 comparison
-    if (D.comparison) {
-      var heads = [{ label: "Year" }].concat(D.comparison.series.map(function (s) { return { label: s.name, num: true }; }));
-      var crows = D.comparison.labels.map(function (y, i) {
-        return [y].concat(D.comparison.series.map(function (s) { return fmt(s.values[i]); }));
-      });
-      attachTable(figureOf("chart-comparison"), D.comparison.title + ph(D.comparison.placeholder),
-        tableEl(D.comparison.title, heads, crows));
-    }
+    if (D.comparison) attachTable(figureOf("chart-comparison"), D.comparison.title,
+      tableEl(D.comparison.title, [{ label: "State" }, { label: "Bans (2021–2023)", num: true }],
+        D.comparison.labels.map(function (l, i) { return [l, fmt(D.comparison.values[i])]; })));
   }
-  function fmt(v) { return (v === null || v === undefined) ? "—" : v; }
+  function fmt(v) { return (v === null || v === undefined) ? "—" : (typeof v === "number" ? v.toLocaleString() : v); }
 
   /* ====================================================================== *
    *  DATA DOWNLOADS (JSON / CSV) + COPY CITATION
@@ -241,14 +232,13 @@
     announce("Downloading " + name);
   }
   function toCSV(D) {
-    var names = countyNames();
-    var rows = [["dataset", "category", "code", "year", "value", "unit", "placeholder"]];
+    var rows = [["dataset", "category", "year", "value", "unit"]];
     var esc = function (s) { s = String(s == null ? "" : s); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
-    if (D.timeline) D.timeline.labels.forEach(function (y, i) { rows.push(["timeline", "reported challenges", "", y, D.timeline.values[i], "count", D.timeline.placeholder]); });
-    if (D.geography) Object.keys(D.geography.incidents || {}).forEach(function (f) { rows.push(["geography", names[f] || f, f, "", D.geography.incidents[f], "count", D.geography.placeholder]); });
-    if (D.themes) D.themes.labels.forEach(function (l, i) { rows.push(["themes", l, "", "", D.themes.values[i], "percent", D.themes.placeholder]); });
-    if (D.authors) D.authors.labels.forEach(function (l, i) { rows.push(["authors", l, "", "", D.authors.values[i], "percent", D.authors.placeholder]); });
-    if (D.comparison) D.comparison.series.forEach(function (s) { D.comparison.labels.forEach(function (y, i) { rows.push(["comparison", s.name, "", y, s.values[i], "count", D.comparison.placeholder]); }); });
+    if (D.timeline) D.timeline.labels.forEach(function (y, i) { rows.push(["timeline", "reported bans", y, D.timeline.values[i], "count"]); });
+    if (D.geography && D.geography.byState) Object.keys(D.geography.byState).forEach(function (s) { rows.push(["geography", s, "", D.geography.byState[s], "count"]); });
+    if (D.themes) D.themes.labels.forEach(function (l, i) { rows.push(["themes", l, "", D.themes.values[i], "count"]); });
+    if (D.authors) D.authors.labels.forEach(function (l, i) { rows.push(["authors", l, "", D.authors.values[i], "count"]); });
+    if (D.comparison) D.comparison.labels.forEach(function (l, i) { rows.push(["comparison", l, "", D.comparison.values[i], "count"]); });
     return rows.map(function (r) { return r.map(esc).join(","); }).join("\n");
   }
   function wireDownloads() {
