@@ -417,6 +417,13 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); margin: 2.2rem 0 .8rem; }
 @media (max-width: 760px) { .photo-grid { grid-template-columns: 1fr; } }
 @media (max-width: 540px) { .team-card { flex: 1 1 100%; max-width: 100%; } }
 
+/* ---- key-stats band ------------------------------------------------------ */
+.stat-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; max-width: var(--wide); margin: 2.2rem auto 0; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 1.2rem 1.3rem; box-shadow: var(--shadow); }
+.stat .num { font-family: var(--display); font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--accent-deep); line-height: 1; }
+.stat .lbl { font-family: var(--ui); font-size: .8rem; color: var(--ink-soft); margin-top: .45rem; line-height: 1.35; }
+@media (max-width: 760px) { .stat-band { grid-template-columns: 1fr 1fr; } }
+
 /* =============================================================================
    ACCESSIBILITY & DIGITAL-HUMANITIES ASSURANCE LAYER
    ========================================================================== */

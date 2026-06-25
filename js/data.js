@@ -56,7 +56,7 @@ window.SHELVED_DATA = {
       "Religion", "Other / Unclear"
     ],
     values: [3600, 2346, 1831, 1701, 684, 445, 245, 5108],
-    mutedLast: true   // de-emphasize the "Other / Unclear" slice
+    chartExcludeOther: true   // omit "Other / Unclear" from the doughnut; keep it in the data table
   },
 
   /* ---- 4. AFFECTED AUTHORS — most-challenged authors -------------------- */
