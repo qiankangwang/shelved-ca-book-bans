@@ -7,6 +7,8 @@ targeted, and the authors most affected — read through **Critical Race Theory*
 
 **Data:** cleaned from PEN America's *Index of School Book Bans* — **15,960 ban
 records across 43 states, 2021–2023**, with an AI-assigned theme per title.
+The project was scoped to 2021–2025; complete, usable records were available
+only through 2023, so every figure is bounded to 2021–2023 (see *Methods*).
 
 ## Live site
 
@@ -25,6 +27,10 @@ A single scrollytelling page (`index.html`) with five interactive visualizations
 | 5 | U.S. states map | D3 (choropleth) | `geography.byState` |
 
 All figures show **real aggregated counts** computed from the cleaned dataset.
+
+A closing **Documentation** section adds four photographs (in `img/`) — children
+reading, a stack of banned titles, the most-banned books of fall 2022, and a
+school-library shelf — credited to Bookshop.org and PEN America / EdWeek.
 
 ## Updating the data
 
