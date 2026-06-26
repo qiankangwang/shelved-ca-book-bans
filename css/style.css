@@ -422,7 +422,7 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); margin: 2.2rem 0 .8rem; }
 .tag-pending { font-family: var(--ui); font-size: .68rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #6f5200; background: color-mix(in srgb, var(--gold) 16%, transparent); border: 1px solid color-mix(in srgb, var(--gold) 38%, transparent); border-radius: 999px; padding: .12rem .5rem; }
 
 /* ---- photographs --------------------------------------------------------- */
-.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.6rem; max-width: var(--wide); }
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; margin-top: 1.6rem; max-width: var(--wide); }
 .photo-ph {
   position: relative; aspect-ratio: 4 / 3; border: 1px dashed var(--line-strong); border-radius: var(--radius);
   background: repeating-linear-gradient(45deg, transparent, transparent 12px,
@@ -433,6 +433,12 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); margin: 2.2rem 0 .8rem; }
 .photo-ph .ico { font-size: 1.7rem; opacity: .55; }
 .photo-ph .lbl { font-size: .85rem; font-weight: 600; color: var(--ink-soft); }
 .photo-ph .cap { font-size: .74rem; }
+.photo { margin: 0; display: flex; flex-direction: column; }
+.photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; display: block; }
+.photo--contain img { object-fit: contain; padding: .7rem; }
+.photo figcaption { font-family: var(--ui); font-size: .82rem; color: var(--ink-soft); line-height: 1.45; margin-top: .55rem; }
+.photo figcaption .src { display: block; color: var(--ink-faint); font-size: .76rem; margin-top: .2rem; }
+.photo figcaption .src a { color: inherit; }
 
 @media (max-width: 760px) { .photo-grid { grid-template-columns: 1fr; } }
 @media (max-width: 540px) { .team-card { flex: 1 1 100%; max-width: 100%; } }
