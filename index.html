@@ -111,15 +111,16 @@
             <h3>Data cleaning decisions &amp; steps</h3>
             <ul class="method-list">
               <li><b>Scope</b> <span>U.S. public-school book bans, 2021–2023 — <b>15,960 records across 43 states.</b> The unit of analysis is a single reported ban.</span></li>
-              <li><b>Theme coding</b> <span>Each title was assigned a theme by an AI classifier, with a confidence level and a short reason. <span class="tag-pending">Note</span> “Other / Unclear” is the classifier’s residual bucket.</span></li>
+              <li><b>Theme coding</b> <span>Each title was assigned a theme by an LLM classifier — recording a confidence level and a short reason — then reviewed and spot-checked by hand. <span class="tag-pending">Note</span> “Other / Unclear” is the classifier’s residual bucket.</span></li>
             </ul>
           </div>
 
           <div class="method-block">
             <h3>Tools &amp; technologies</h3>
             <ul class="method-list">
-              <li><b>Data cleaning</b> <span>Python / spreadsheet, plus an LLM theme classifier</span></li>
-              <li><b>Website</b> <span>HTML, CSS, JavaScript · Chart.js · D3.js · deployed on GitHub Pages</span></li>
+              <li><b>Data cleaning &amp; analysis</b> <span>Python (pandas) for cleaning and aggregation, with Seaborn for exploratory plots; an LLM-based classifier assigned each title a theme (confidence level and reason), reviewed and spot-checked by hand.</span></li>
+              <li><b>Visualization</b> <span>Chart.js for the charts (themes, timeline, authors, state comparison) and D3.js for the U.S. states choropleth map.</span></li>
+              <li><b>Website</b> <span>HTML, CSS, and JavaScript — a static site with no build step, deployed on GitHub Pages.</span></li>
             </ul>
           </div>
         </div>
