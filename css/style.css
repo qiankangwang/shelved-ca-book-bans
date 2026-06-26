@@ -372,6 +372,26 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); margin: 2.2rem 0 .8rem; }
 }
 .narrative-ph::before { content: "\270E"; color: var(--accent); font-size: 1rem; line-height: 1.4; }
 
+/* ---- per-visualization narrative (the team's interpretation) ------------ */
+.narrative { max-width: var(--reading); margin: 1.5rem auto 0; }
+.narrative > p { margin: 0 0 1.15rem; line-height: 1.72; }
+.narrative > p:last-child { margin-bottom: 0; }
+.narrative .lens {
+  font-family: var(--ui); font-size: .72rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+  display: block; margin: 1.7rem 0 .6rem;
+}
+.narrative blockquote {
+  margin: 1.15rem 0; padding: .15rem 0 .15rem 1.15rem;
+  border-left: 3px solid var(--accent);
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: 1.1rem; line-height: 1.46; color: var(--accent-deep);
+}
+.narrative blockquote cite {
+  display: block; margin-top: .55rem; font-family: var(--ui);
+  font-style: normal; font-size: .8rem; letter-spacing: .02em; color: var(--ink-faint);
+}
+
 /* ---- team / about -------------------------------------------------------- */
 .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.4rem; margin-top: 2.4rem; }
 .team-card { flex: 1 1 290px; max-width: 360px; display: flex; flex-direction: column;

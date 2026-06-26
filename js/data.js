@@ -76,8 +76,8 @@ window.SHELVED_DATA = {
     placeholder: false,
     title: "Top states vs. the national average",
     note: "Total bans, 2021–2023. The national average is per reporting state.",
-    labels: ["Florida", "Iowa", "Texas", "Pennsylvania", "Wisconsin", "Missouri", "National avg / state"],
-    values: [6535, 3703, 1964, 664, 480, 417, 371],
-    refIndex: 6   // index of the national-average bar (highlighted differently)
+    labels: ["Florida", "Iowa", "Texas", "Pennsylvania", "Wisconsin", "National avg / state"],
+    values: [6535, 3703, 1964, 664, 480, 371],
+    refIndex: 5   // index of the national-average bar (highlighted differently)
   }
 };

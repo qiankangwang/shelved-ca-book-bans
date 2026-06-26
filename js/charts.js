@@ -63,7 +63,7 @@
     if (t.chartExcludeOther) { labels = labels.slice(0, -1); values = values.slice(0, -1); }
     var colors = labels.map(function (_, i) { return PALETTE[i % PALETTE.length]; });
     buildLegend("legend-themes", labels, colors);
-    var total = values.reduce(function (a, b) { return a + b; }, 0);
+    var total = t.values.reduce(function (a, b) { return a + b; }, 0);  // full dataset incl. "Other" so tooltip % matches the narrative & Fig 1 caption
     new Chart(el, {
       type: "doughnut",
       data: { labels: labels, datasets: [{ data: values, backgroundColor: colors, borderColor: "#fbf8f1", borderWidth: 2, hoverOffset: 6 }] },
@@ -71,7 +71,7 @@
         responsive: true, maintainAspectRatio: false, cutout: "58%",
         plugins: {
           legend: { display: false },
-          tooltip: tooltipStyle(function (c) { return c.label + ": " + fmt(c.parsed) + " (" + Math.round(c.parsed / total * 100) + "%)"; })
+          tooltip: tooltipStyle(function (c) { return c.label + ": " + fmt(c.parsed) + " (" + (c.parsed / total * 100).toFixed(1) + "% of all bans)"; })
         }
       }
     });
