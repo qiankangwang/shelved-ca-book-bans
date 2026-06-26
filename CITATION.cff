@@ -10,9 +10,18 @@ abstract: >-
   title.
 type: dataset
 authors:
-  - name: "Project author (replace this entry in CITATION.cff)"
-date-released: "2026-06-24"
-version: "1.0.0"
+  - given-names: Kant
+    family-names: Wang
+  - given-names: Rosie
+    family-names: Lu
+  - given-names: Chris
+    family-names: Chen
+  - given-names: Zoey
+    family-names: Huang
+  - given-names: Yewei
+    family-names: Wang
+date-released: "2026-06-26"
+version: "2.0.0"
 url: "https://qiankangwang.github.io/shelved-ca-book-bans/"
 repository-code: "https://github.com/qiankangwang/shelved-ca-book-bans"
 license: MIT
@@ -20,7 +29,7 @@ keywords:
   - digital humanities
   - book bans
   - censorship
-  - California
-  - elementary education
+  - public schools
+  - United States
   - data visualization
   - PEN America
