@@ -21,7 +21,7 @@ A single scrollytelling page (`index.html`) with five interactive visualizations
 | # | Figure | Built with | Data in `js/data.js` |
 |---|--------|-----------|----------------------|
 | 1 | Most banned themes | Chart.js (doughnut) | `themes` |
-| 2 | Book bans over time (2021–2023) | Chart.js (line) | `timeline` |
+| 2 | Book Bans between 2021 and 2023 | Chart.js (line) | `timeline` |
 | 3 | Most-challenged authors | Chart.js (bar) | `authors` |
 | 4 | Top states vs. national average | Chart.js (bar) | `comparison` |
 | 5 | U.S. states map | D3 (choropleth) | `geography.byState` |
