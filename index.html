@@ -150,11 +150,12 @@
           </table>
 
           <div class="dl-row">
-            <button class="dl-btn" id="dl-csv" type="button">⬇ Download chart data (CSV)</button>
+            <a class="dl-btn" href="data/final_books_info_cleaned.csv" download>⬇ Download full dataset (CSV)</a>
+            <button class="dl-btn alt" id="dl-csv" type="button">⬇ Download chart data (CSV)</button>
             <button class="dl-btn alt" id="dl-json" type="button">⬇ Download chart data (JSON)</button>
-            <a class="dl-btn alt" href="https://github.com/qiankangwang/shelved-ca-book-bans/blob/main/js/data.js">View source dataset</a>
+            <a class="dl-btn alt" href="https://github.com/qiankangwang/shelved-ca-book-bans/blob/main/data/final_books_info_cleaned.csv">View source dataset</a>
           </div>
-          <p style="font-family:var(--ui);font-size:.82rem;color:var(--ink-faint);margin-top:.4rem">Downloads provide the aggregated counts behind each chart, generated live from <code>js/data.js</code>.</p>
+          <p style="font-family:var(--ui);font-size:.82rem;color:var(--ink-faint);margin-top:.4rem">The <b>full dataset</b> is the cleaned, book-level source (<code>data/final_books_info_cleaned.csv</code> — 15,960 rows, one per reported ban). The <b>chart data</b> downloads give the aggregated counts behind each figure, generated live from <code>js/data.js</code>.</p>
         </div>
       </div>
     </section>

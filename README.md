@@ -32,12 +32,19 @@ A closing **Documentation** section adds four photographs (in `img/`) — childr
 reading, a stack of banned titles, the most-banned books of fall 2022, and a
 school-library shelf — credited to Bookshop.org and PEN America / EdWeek.
 
+## Data files
+
+- **`data/final_books_info_cleaned.csv`** — the cleaned, book-level source dataset
+  (15,960 rows, one per reported ban), downloadable in full from the site.
+- **`js/data.js`** — the aggregated figures that drive the charts (the single source
+  of truth for every visualization), computed from the CSV above.
+
 ## Updating the data
 
-The aggregated figures live in **`js/data.js`** (the single source of truth). To
-refresh them, re-aggregate the source CSV and replace the values — e.g. `themes`
-(counts per theme), `geography.byState` (counts keyed by full state name), or
-`authors` (top authors by count). No build step, bundler, or server is required.
+To refresh the figures, re-aggregate `data/final_books_info_cleaned.csv` and replace
+the values in `js/data.js` — e.g. `themes` (counts per theme), `geography.byState`
+(counts keyed by full state name), or `authors` (top authors by count). No build
+step, bundler, or server is required.
 
 ## Local preview
 
@@ -61,8 +68,9 @@ graphics. Preferences are saved in `localStorage` only — nothing leaves the br
 
 ## Data, license & citation
 
-- **Download the data** from the *Methods* section (CSV or JSON of the aggregated
-  chart counts, generated live from `js/data.js`), alongside a **data dictionary**.
+- **Download the data** from the *Methods* section: the **full dataset**
+  (`data/final_books_info_cleaned.csv`) plus CSV/JSON of the aggregated chart counts
+  (generated live from `js/data.js`), alongside a **data dictionary**.
 - **Code** is licensed **MIT**; **content** (prose & visuals) is **CC BY 4.0** — see
   [`LICENSE`](LICENSE).
 - **Citation:** a machine-readable [`CITATION.cff`](CITATION.cff) is included; see the
