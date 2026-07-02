@@ -3,9 +3,10 @@
  *  data.js  —  SINGLE SOURCE OF TRUTH for every visualization.
  * ----------------------------------------------------------------------------
  *  Figures are REAL, aggregated from the project's cleaned PEN America dataset
- *  (final_books_info_cleaned.csv): 15,960 ban records across 43 states,
- *  2021–2023, with an AI-assigned theme per title.
- *  To update, re-run the aggregation and replace the values below.
+ *  (data/final_books_info_cleaned.csv): 15,960 ban records across 43 states,
+ *  2021–2023, with an AI-assigned theme per title. That book-level CSV ships in
+ *  the repo and is downloadable in full from the site's Methods section.
+ *  To update, re-aggregate that CSV and replace the values below.
  * ==========================================================================*/
 
 window.SHELVED_DATA = {
