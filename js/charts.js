@@ -101,7 +101,7 @@
     var t = D.comparison, el = document.getElementById("chart-comparison");
     if (!el) return;
     var colors = t.labels.map(function (_, i) { return i === t.refIndex ? PALETTE[1] : PALETTE[0]; });
-    buildLegend("legend-comparison", ["State total, 2021–2023", "National average / state"], [PALETTE[0], PALETTE[1]]);
+    buildLegend("legend-comparison", ["State total, 2021–2023", "National average"], [PALETTE[0], PALETTE[1]]);
     new Chart(el, {
       type: "bar",
       data: { labels: t.labels, datasets: [{ label: "Bans", data: t.values, backgroundColor: colors, borderRadius: 4, maxBarThickness: 52 }] },
