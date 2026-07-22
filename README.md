@@ -12,7 +12,7 @@ only through 2023, so every figure is bounded to 2021–2023 (see *Methods*).
 
 ## Live site
 
-**https://qiankangwang.github.io/shelved-ca-book-bans/**
+**https://wangkant.github.io/shelved-ca-book-bans/**
 
 ## What's here
 

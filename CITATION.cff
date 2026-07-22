@@ -22,8 +22,8 @@ authors:
     family-names: Wang
 date-released: "2026-06-26"
 version: "2.0.0"
-url: "https://qiankangwang.github.io/shelved-ca-book-bans/"
-repository-code: "https://github.com/qiankangwang/shelved-ca-book-bans"
+url: "https://wangkant.github.io/shelved-ca-book-bans/"
+repository-code: "https://github.com/wangkant/shelved-ca-book-bans"
 license: MIT
 keywords:
   - digital humanities
